@@ -56,7 +56,7 @@ POST /register → Skapa användare
 
 POST /login → Logga in & få JWT
 
-## ❓Quiz
+### ❓Quiz
 
 POST /quizzes → Skapa quiz (kräver JWT)
 
@@ -64,19 +64,19 @@ GET /quizzes → Hämta alla quiz
 
 DELETE /quizzes/{quizId} → Ta bort quiz (endast ägare, kräver JWT)
 
-## 📝 Questions
+### 📝 Questions
 
 POST /quizzes/{quizId}/questions → Lägg till fråga (kräver JWT och ägarskap)
 
 GET /quizzes/{quizId}/questions → Hämta frågor för quiz
 
-## 🏆 Scores
+### 🏆 Scores
 
 POST /quizzes/{quizId}/score → Registrera poäng
 
 GET /quizzes/{quizId}/leaderboard → Hämta leaderboard
 
-## 📬 Postman
+### 📬 Postman
 
 En färdig Postman Collection finns i repo:
 
@@ -89,13 +89,13 @@ Vi använder två environment-variabler:
 
 {{quizId}} → sätts vid createQuiz
 
-## 🖇️ Exempel-flöde
+### 🖇️ Exempel-flöde
 
-1️⃣ Register → POST /register
-2️⃣ Login → POST /login (spara token)
-3️⃣ Skapa quiz → POST /quizzes (spara quizId)
-4️⃣ Lägg till fråga → POST /quizzes/{{quizId}}/questions
-5️⃣ Hämta frågor → GET /quizzes/{{quizId}}/questions
-6️⃣ Registrera score → POST /quizzes/{{quizId}}/score
-7️⃣ Leaderboard → GET /quizzes/{{quizId}}/leaderboard
-8️⃣ Ta bort quiz → DELETE /quizzes/{{quizId}}
+- Register → POST /register
+- Login → POST /login (spara token)
+- Skapa quiz → POST /quizzes (spara quizId)
+- Lägg till fråga → POST /quizzes/{{quizId}}/questions
+- Hämta frågor → GET /quizzes/{{quizId}}/questions
+- Registrera score → POST /quizzes/{{quizId}}/score
+- Leaderboard → GET /quizzes/{{quizId}}/leaderboard
+- Ta bort quiz → DELETE /quizzes/{{quizId}}
