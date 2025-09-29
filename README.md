@@ -1,40 +1,30 @@
-#📚 Quiztopia API
+# 📚 Quiztopia API  
 
-✨ Beskrivning
+## ✨ Beskrivning  
+**Quiztopia API** är en serverless backend byggd på **AWS Lambda**, **API Gateway** och **DynamoDB**.  
 
-Quiztopia API är en serverless backend byggd på AWS Lambda, API Gateway och DynamoDB.
+👉 Funktioner:  
+- 📝 Registrera användare & logga in med **JWT**  
+- 📘 Skapa quiz & lägga till frågor  
+- ❌ Ta bort quiz *(endast ägare)*  
+- 🏆 Leaderboard för poäng  
 
-👉 Funktioner:
+---
 
-📝 Registrera användare & logga in med JWT
+## 🛠️ Tekniker  
+- ⚡ **Node.js 18 (ESM)**  
+- ⚙️ **Serverless Framework**  
+- ☁️ **AWS Lambda**  
+- 🗄️ **DynamoDB**  
+- 🌐 **API Gateway (HTTP API)**  
+- 🔑 **JWT (JSON Web Token)**  
 
-📘 Skapa quiz & lägga till frågor
+---
 
-❌ Ta bort quiz (endast ägare)
+## 🚀 Setup  
 
-🏆 Leaderboard för poäng
-
-Projektet är en del av kursens examination och uppfyller både G-krav och VG-krav.
-
-🛠️ Tekniker
-
-⚡ Node.js 18 (ESM)
-
-⚙️ Serverless Framework
-
-☁️ AWS Lambda
-
-🗄️ DynamoDB
-
-🌐 API Gateway (HTTP API)
-
-🔑 JWT (JSON Web Token)
-
-🛠️ (Valfritt) Middy för middleware-hantering
-
-🚀 Setup
-1️⃣ Klona repo
-
+### 1️⃣ Klona repo 
+```bash
 git clone https://github.com/
 <ditt-användarnamn>/quiztopia.git
 cd quiztopia
@@ -58,15 +48,15 @@ USERS_TABLE=Users
 QUIZZES_TABLE=Quizzes
 SCORES_TABLE=Scores
 JWT_SECRET=<hemlig_nyckel>
-
-📌 Endpoints
-🧑 Auth
+```
+## 📌 Endpoints
+## 🧑 Auth
 
 POST /register → Skapa användare
 
 POST /login → Logga in & få JWT
 
-❓ Quiz
+## ❓Quiz
 
 POST /quizzes → Skapa quiz (kräver JWT)
 
@@ -74,19 +64,19 @@ GET /quizzes → Hämta alla quiz
 
 DELETE /quizzes/{quizId} → Ta bort quiz (endast ägare, kräver JWT)
 
-📝 Questions
+## 📝 Questions
 
 POST /quizzes/{quizId}/questions → Lägg till fråga (kräver JWT och ägarskap)
 
 GET /quizzes/{quizId}/questions → Hämta frågor för quiz
 
-🏆 Scores
+## 🏆 Scores
 
 POST /quizzes/{quizId}/score → Registrera poäng
 
 GET /quizzes/{quizId}/leaderboard → Hämta leaderboard
 
-📬 Postman
+## 📬 Postman
 
 En färdig Postman Collection finns i repo:
 
@@ -99,7 +89,7 @@ Vi använder två environment-variabler:
 
 {{quizId}} → sätts vid createQuiz
 
-🖇️ Exempel-flöde
+## 🖇️ Exempel-flöde
 
 1️⃣ Register → POST /register
 2️⃣ Login → POST /login (spara token)
