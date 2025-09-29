@@ -9,8 +9,6 @@
 - ❌ Ta bort quiz *(endast ägare)*  
 - 🏆 Leaderboard för poäng  
 
----
-
 ## 🛠️ Tekniker  
 - ⚡ **Node.js 18 (ESM)**  
 - ⚙️ **Serverless Framework**  
@@ -18,8 +16,6 @@
 - 🗄️ **DynamoDB**  
 - 🌐 **API Gateway (HTTP API)**  
 - 🔑 **JWT (JSON Web Token)**  
-
----
 
 ## 🚀 Setup  
 
