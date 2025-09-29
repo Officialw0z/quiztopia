@@ -1,24 +1,22 @@
-📚 Quiztopia API
+#📚 Quiztopia API
 
-🔹 Beskrivning
+✨ Beskrivning
 
 Quiztopia API är en serverless backend byggd på AWS Lambda, API Gateway och DynamoDB.
 
 👉 Funktioner:
 
-Registrera användare & logga in med JWT
+📝 Registrera användare & logga in med JWT
 
-Skapa quiz & lägga till frågor
+📘 Skapa quiz & lägga till frågor
 
-Ta bort quiz (endast ägare)
+❌ Ta bort quiz (endast ägare)
 
-Spela quiz & registrera poäng
-
-Visa leaderboard för quiz
+🏆 Leaderboard för poäng
 
 Projektet är en del av kursens examination och uppfyller både G-krav och VG-krav.
 
-🔹 Tekniker
+🛠️ Tekniker
 
 ⚡ Node.js 18 (ESM)
 
@@ -30,27 +28,29 @@ Projektet är en del av kursens examination och uppfyller både G-krav och VG-kr
 
 🌐 API Gateway (HTTP API)
 
-🔑 JWT (JSON Web Token) för auth
+🔑 JWT (JSON Web Token)
 
 🛠️ (Valfritt) Middy för middleware-hantering
 
-🔹 Setup
-1. Klona repo
-git clone https://github.com/<ditt-användarnamn>/quiztopia.git
+🚀 Setup
+1️⃣ Klona repo
+
+git clone https://github.com/
+<ditt-användarnamn>/quiztopia.git
 cd quiztopia
 
-2. Installera dependencies
+2️⃣ Installera dependencies
+
 npm install
 
-3. Deploya till AWS
+3️⃣ Deploya till AWS
+
 sls deploy
 
-
-👉 Din bas-URL visas efter deploy, t.ex.
-
+Efter deploy får du en bas-URL, t.ex.
 https://kqevgy6be0.execute-api.eu-north-1.amazonaws.com
 
-🔹 Environment Variables
+🔧 Environment Variables
 
 Dessa sätts via serverless.yml:
 
@@ -59,7 +59,7 @@ QUIZZES_TABLE=Quizzes
 SCORES_TABLE=Scores
 JWT_SECRET=<hemlig_nyckel>
 
-🔹 Endpoints
+📌 Endpoints
 🧑 Auth
 
 POST /register → Skapa användare
@@ -82,38 +82,30 @@ GET /quizzes/{quizId}/questions → Hämta frågor för quiz
 
 🏆 Scores
 
-POST /quizzes/{quizId}/score → Registrera poäng för inloggad användare
+POST /quizzes/{quizId}/score → Registrera poäng
 
-GET /quizzes/{quizId}/leaderboard → Hämta leaderboard för quiz
+GET /quizzes/{quizId}/leaderboard → Hämta leaderboard
 
-🔹 Postman
+📬 Postman
 
 En färdig Postman Collection finns i repo:
 
 📂 quiztopia.postman_collection.json
 
-Importera den i Postman för att testa API:et.
-
-👉 Vi använder två environment-variabler i Postman:
+👉 Importera den i Postman för att snabbt testa API:et.
+Vi använder två environment-variabler:
 
 {{token}} → sätts vid login
 
 {{quizId}} → sätts vid createQuiz
 
-🔹 Exempel på flöde
+🖇️ Exempel-flöde
 
-📝 Register → POST /register
-
-🔑 Login → POST /login (spara token)
-
-📘 Skapa quiz → POST /quizzes (spara quizId)
-
-❓ Lägg till fråga → POST /quizzes/{{quizId}}/questions
-
-📖 Hämta frågor → GET /quizzes/{{quizId}}/questions
-
-🏅 Registrera score → POST /quizzes/{{quizId}}/score
-
-🏆 Leaderboard → GET /quizzes/{{quizId}}/leaderboard
-
-❌ Ta bort quiz → DELETE /quizzes/{{quizId}}
+1️⃣ Register → POST /register
+2️⃣ Login → POST /login (spara token)
+3️⃣ Skapa quiz → POST /quizzes (spara quizId)
+4️⃣ Lägg till fråga → POST /quizzes/{{quizId}}/questions
+5️⃣ Hämta frågor → GET /quizzes/{{quizId}}/questions
+6️⃣ Registrera score → POST /quizzes/{{quizId}}/score
+7️⃣ Leaderboard → GET /quizzes/{{quizId}}/leaderboard
+8️⃣ Ta bort quiz → DELETE /quizzes/{{quizId}}
