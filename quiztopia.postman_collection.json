@@ -1,0 +1,363 @@
+{
+	"info": {
+		"_postman_id": "655421c1-5f70-4ac9-94ca-02b4a3e487c6",
+		"name": "quiztopia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48523858"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3Njk5OWQ3Zi1lZGI3LTQ4MjQtOTE1Ny1kZjIxOTFmMzkyM2EiLCJ1c2VybmFtZSI6InN1cGVyaWRhIiwiaWF0IjoxNzU5MTQ1MzY4LCJleHAiOjE3NTkxNDg5Njh9.exFrJXhZFCjwUe3mER-gI_fGaRYB8EDE6XZA2YoUZhY",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"testuser123\",\r\n  \"password\": \"hemligt123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://kqevgy6be0.execute-api.eu-north-1.amazonaws.com/register",
+					"protocol": "https",
+					"host": [
+						"kqevgy6be0",
+						"execute-api",
+						"eu-north-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI3Njk5OWQ3Zi1lZGI3LTQ4MjQtOTE1Ny1kZjIxOTFmMzkyM2EiLCJ1c2VybmFtZSI6InN1cGVyaWRhIiwiaWF0IjoxNzU5MTQ1MzY4LCJleHAiOjE3NTkxNDg5Njh9.exFrJXhZFCjwUe3mER-gI_fGaRYB8EDE6XZA2YoUZhY",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"testuser123\",\r\n  \"password\": \"hemligt123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://kqevgy6be0.execute-api.eu-north-1.amazonaws.com/login",
+					"protocol": "https",
+					"host": [
+						"kqevgy6be0",
+						"execute-api",
+						"eu-north-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create quiz",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0ZTgwZTU3OC03ZDVmLTQ4MmUtYWM2Ny04MjFmMTQ3MzVjYmUiLCJ1c2VybmFtZSI6InRlc3R1c2VyMTIzIiwiaWF0IjoxNzU5MTQ4MzY3LCJleHAiOjE3NTkxNTE5Njd9.pNjzYsPpVfC28rUnhZUySiZ2gpLiHdlz7iumO45CZy0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Historia i Göteborg\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://kqevgy6be0.execute-api.eu-north-1.amazonaws.com/quizzes",
+					"protocol": "https",
+					"host": [
+						"kqevgy6be0",
+						"execute-api",
+						"eu-north-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"quizzes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add question",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0ZTgwZTU3OC03ZDVmLTQ4MmUtYWM2Ny04MjFmMTQ3MzVjYmUiLCJ1c2VybmFtZSI6InRlc3R1c2VyMTIzIiwiaWF0IjoxNzU5MTQ4MzY3LCJleHAiOjE3NTkxNTE5Njd9.pNjzYsPpVfC28rUnhZUySiZ2gpLiHdlz7iumO45CZy0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"question\": \"Vad heter Sveriges huvudstad?\",\r\n  \"answer\": \"Stockholm\",\r\n  \"lat\": 59.3293,\r\n  \"long\": 18.0686\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://kqevgy6be0.execute-api.eu-north-1.amazonaws.com/quizzes/e3516ed4-23cb-4a07-985a-6ea6ec401851/questions",
+					"protocol": "https",
+					"host": [
+						"kqevgy6be0",
+						"execute-api",
+						"eu-north-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"quizzes",
+						"e3516ed4-23cb-4a07-985a-6ea6ec401851",
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get questions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0ZTgwZTU3OC03ZDVmLTQ4MmUtYWM2Ny04MjFmMTQ3MzVjYmUiLCJ1c2VybmFtZSI6InRlc3R1c2VyMTIzIiwiaWF0IjoxNzU5MTQ4MzY3LCJleHAiOjE3NTkxNTE5Njd9.pNjzYsPpVfC28rUnhZUySiZ2gpLiHdlz7iumO45CZy0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"question\": \"Vad heter Sveriges huvudstad?\",\r\n  \"answer\": \"Stockholm\",\r\n  \"lat\": 59.3293,\r\n  \"long\": 18.0686\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://kqevgy6be0.execute-api.eu-north-1.amazonaws.com/quizzes/e3516ed4-23cb-4a07-985a-6ea6ec401851/questions",
+					"protocol": "https",
+					"host": [
+						"kqevgy6be0",
+						"execute-api",
+						"eu-north-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"quizzes",
+						"e3516ed4-23cb-4a07-985a-6ea6ec401851",
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add score",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0ZTgwZTU3OC03ZDVmLTQ4MmUtYWM2Ny04MjFmMTQ3MzVjYmUiLCJ1c2VybmFtZSI6InRlc3R1c2VyMTIzIiwiaWF0IjoxNzU5MTQ4MzY3LCJleHAiOjE3NTkxNTE5Njd9.pNjzYsPpVfC28rUnhZUySiZ2gpLiHdlz7iumO45CZy0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"score\": 15\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://kqevgy6be0.execute-api.eu-north-1.amazonaws.com/quizzes/e3516ed4-23cb-4a07-985a-6ea6ec401851/score",
+					"protocol": "https",
+					"host": [
+						"kqevgy6be0",
+						"execute-api",
+						"eu-north-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"quizzes",
+						"e3516ed4-23cb-4a07-985a-6ea6ec401851",
+						"score"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get score",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0ZTgwZTU3OC03ZDVmLTQ4MmUtYWM2Ny04MjFmMTQ3MzVjYmUiLCJ1c2VybmFtZSI6InRlc3R1c2VyMTIzIiwiaWF0IjoxNzU5MTQ4MzY3LCJleHAiOjE3NTkxNTE5Njd9.pNjzYsPpVfC28rUnhZUySiZ2gpLiHdlz7iumO45CZy0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"score\": 15\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://kqevgy6be0.execute-api.eu-north-1.amazonaws.com/quizzes/e3516ed4-23cb-4a07-985a-6ea6ec401851/leaderboard",
+					"protocol": "https",
+					"host": [
+						"kqevgy6be0",
+						"execute-api",
+						"eu-north-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"quizzes",
+						"e3516ed4-23cb-4a07-985a-6ea6ec401851",
+						"leaderboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete quiz",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI0ZTgwZTU3OC03ZDVmLTQ4MmUtYWM2Ny04MjFmMTQ3MzVjYmUiLCJ1c2VybmFtZSI6InRlc3R1c2VyMTIzIiwiaWF0IjoxNzU5MTQ4MzY3LCJleHAiOjE3NTkxNTE5Njd9.pNjzYsPpVfC28rUnhZUySiZ2gpLiHdlz7iumO45CZy0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"score\": 15\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://kqevgy6be0.execute-api.eu-north-1.amazonaws.com/quizzes/e3516ed4-23cb-4a07-985a-6ea6ec401851",
+					"protocol": "https",
+					"host": [
+						"kqevgy6be0",
+						"execute-api",
+						"eu-north-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"quizzes",
+						"e3516ed4-23cb-4a07-985a-6ea6ec401851"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
