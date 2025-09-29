@@ -50,7 +50,7 @@ SCORES_TABLE=Scores
 JWT_SECRET=<hemlig_nyckel>
 ```
 ## 📌 Endpoints
-## 🧑 Auth
+### 🧑 Auth
 
 POST /register → Skapa användare
 
