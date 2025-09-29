@@ -1,0 +1,151 @@
+service: quiztopia-api
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: eu-north-1
+
+  environment:
+    USERS_TABLE: Users
+    QUIZZES_TABLE: Quizzes
+    SCORES_TABLE: Scores
+    JWT_SECRET: Lucke123sls
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:PutItem
+        - dynamodb:GetItem
+        - dynamodb:BatchGetItem 
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:DeleteItem
+        - dynamodb:UpdateItem
+        - dynamodb:DescribeTable
+      Resource:
+        - arn:aws:dynamodb:eu-north-1:*:table/Users
+        - arn:aws:dynamodb:eu-north-1:*:table/Quizzes
+        - arn:aws:dynamodb:eu-north-1:*:table/Scores
+
+    - Effect: Allow
+      Action:
+        - lambda:InvokeFunction
+      Resource: 
+        - arn:aws:lambda:eu-north-1:*:function:quiztopia-api-*
+
+    - Effect: Allow
+      Action:
+        - logs:CreateLogStream
+        - logs:PutLogEvents
+      Resource:
+        - arn:aws:logs:eu-north-1:*:log-group:/aws/lambda/*:*
+
+    - Effect: Allow
+      Action:
+        - logs:CreateLogGroup
+      Resource: "*"
+
+functions:
+  register:
+    handler: handlers/auth.register
+    events:
+      - httpApi:
+          path: /register
+          method: post
+
+  login:
+    handler: handlers/auth.login
+    events:
+      - httpApi:
+          path: /login
+          method: post
+
+  createQuiz:
+    handler: handlers/quiz.createQuiz
+    events:
+      - httpApi:
+          path: /quizzes
+          method: post
+
+  getQuizzes:
+    handler: handlers/quiz.getQuizzes
+    events:
+      - httpApi:
+          path: /quizzes
+          method: get
+
+  addQuestion:
+    handler: handlers/question.addQuestion
+    events:
+      - httpApi:
+          path: /quizzes/{quizId}/questions
+          method: post
+
+  getQuestions:
+    handler: handlers/question.getQuestions
+    events:
+      - httpApi:
+          path: /quizzes/{quizId}/questions
+          method: get
+
+  deleteQuiz:
+    handler: handlers/quiz.deleteQuiz
+    events:
+      - httpApi:
+          path: /quizzes/{quizId}
+          method: delete
+  addScore:
+    handler: handlers/score.addScore
+    events:
+      - httpApi:
+          path: /quizzes/{quizId}/score
+          method: post
+
+  getLeaderboard:
+    handler: handlers/score.getLeaderboard
+    events:
+      - httpApi:
+          path: /quizzes/{quizId}/leaderboard
+          method: get
+
+resources:
+  Resources:
+    UsersTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: Users
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: userId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: userId
+            KeyType: HASH
+
+    QuizzesTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: Quizzes
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: quizId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: quizId
+            KeyType: HASH
+
+    ScoresTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: Scores
+        BillingMode: PAY_PER_REQUEST
+        AttributeDefinitions:
+          - AttributeName: quizId
+            AttributeType: S
+          - AttributeName: userId
+            AttributeType: S
+        KeySchema:
+          - AttributeName: quizId
+            KeyType: HASH
+          - AttributeName: userId
+            KeyType: RANGE
